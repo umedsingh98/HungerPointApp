@@ -5,7 +5,7 @@ export const StoreContext = createContext(null);
 
 const StoreContextProvider = (prop) => {
   const [cartItems, setCartItems] = useState({});
-  const url = "http://localhost:4000";
+  const url = "https://hungerpointbackend.onrender.com";
   const [token, setToken] = useState("");
   const [food_list, setFoodList] = useState([]);
 
