@@ -45,7 +45,9 @@ const StoreContextProvider = (prop) => {
   };
 
   const fetchFoodList = async () => {
-    const items = await axios.get(url + "/api/food/list");
+    const items = await axios.get("https://hungerpointbackend.onrender.com/api/food/list");
+    console.log(items.data);
+    console.log(items.data.data);
     setFoodList(items.data.data);
   };
 
