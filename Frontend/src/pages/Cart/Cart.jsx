@@ -23,7 +23,7 @@ const Cart = () => {
         <br/>
         <hr/>
         {food_list.map((foodItem, index) => {
-
+           console.log("food items: ",foodItem)
           if(cartItems[foodItem._id] > 0){
             return(
               <>

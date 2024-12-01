@@ -34,8 +34,8 @@ export const signup = async (req, res) => {
             email: email,
             password: hashedPassword
         });
-
        const user = await newUser.save();
+       
         const token = createToken(user._id);
         res.json({success: true,message: "Registered Successfully!", token});
 
@@ -58,9 +58,6 @@ export const login = async (req, res) => {
         if (!isMatch) {
             return res.json({success: false, message: "Incorrect password."});
         }
-
-        const token = createToken(user._id);
-        res.json({success: true, message: "Logged In Successfully.", token});
 }
 catch (error) {
     console.error(error);
