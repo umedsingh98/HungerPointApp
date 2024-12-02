@@ -45,7 +45,7 @@ const StoreContextProvider = (prop) => {
   };
 
   const fetchFoodList = async () => {
-    const items = await axios.get("https://hungerpointbackend.onrender.com/api/food/list");
+    const items = await axios.get(url + "/api/food/list");
     console.log("ashu");
     console.log(items.data.data);
     setFoodList(items.data.data);
@@ -54,7 +54,7 @@ const StoreContextProvider = (prop) => {
   const loadCartData = async (token) =>{
     const response = await axios.post(url + "/api/cart/get", {},{headers: {token}});
     setCartItems(response.data.data);
-    console.log(response.data,"cart datra");  
+    console.log(response.data,"cart data");  
   }
 
   useEffect(() => {
